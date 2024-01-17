@@ -1,4 +1,4 @@
-# Eon-Launcher
+# Eon-Launcher (Build on DEV TESTING x64)
 This was just eon v1 src
 
 # Theres difference branches wow!
