@@ -1,19 +1,17 @@
-﻿<ui:UiWindow x:Class="UiDesktopApp5.Window2"
+﻿<ui:UiWindow x:Class="WpfApp10.MainWindow"
             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-            xmlns:local="clr-namespace:UiDesktopApp5"
+            xmlns:local="clr-namespace:WpfApp10"
             xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
-        mc:Ignorable="d"
-                ExtendsContentIntoTitleBar="True"
-    WindowBackdropType="Mica"
-    WindowCornerPreference="Round"
-    ResizeMode="NoResize"
-        Title="
-             Version Checker" Height="454" Width="336" WindowStyle="None"
-              WindowStartupLocation="CenterScreen" Closing="UiWindow_Closing"
-             >
+            mc:Ignorable="d"
+            ExtendsContentIntoTitleBar="True"
+            WindowBackdropType="Mica"
+            WindowCornerPreference="Round"
+            ResizeMode="NoResize"
+            Title="Eon Installer" Height="215" Width="550" WindowStyle="None"
+            WindowStartupLocation="CenterScreen">
     <Grid Margin="0,0,0,-12">
         <Border Grid.Row="0">
 
@@ -21,6 +19,8 @@
                 <BlurEffect Radius="2"/>
             </Border.Effect>
 
+
+            <!-- The background image container -->
             <Border x:Name="imageContainer">
 
 
@@ -29,25 +29,34 @@
                 </Border.Background>
                 <Border>
                     <Border.Background>
-                        <SolidColorBrush Color="Black" Opacity="0.5"/>
+                        <SolidColorBrush Color="Black" Opacity="0.6"/>
                     </Border.Background>
-                    
+
                 </Border>
             </Border>
         </Border>
         <Grid>
-            <Viewbox Width="144" Height="144">
+            <Viewbox Width="115" Height="115" Margin="0,0,-302,0">
                 <ui:ProgressRing IsIndeterminate="True"  BorderThickness="0.2"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="200,200,200,200" UseLayoutRounding="False"/>
             </Viewbox>
-            <Label x:Name="Status" Content="Checking for updates..." Margin="0,324,0,45" FontFamily="Arial Nova" FontSize="24" HorizontalAlignment="Center" Width="330" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" />
+            <Label x:Name="Status" Foreground="White" Content="Checking for updates..." Margin="10,92,0,93" FontFamily="Arial Nova" FontSize="24" HorizontalAlignment="Left" Width="335" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" >
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
         </Grid>
         <ui:TitleBar
-            Title="Eon"
+            Title="eon"
             Grid.Row="0"
             ShowClose="False"
             ShowMinimize="False"
             ShowMaximize="False"
             Icon="pack://application:,,,/Assets/Logo.png"
-            UseSnapLayout="True" FontSize="16" Height="70"/>
+            UseSnapLayout="True" FontSize="14" Height="54"/>
     </Grid>
 </ui:UiWindow>
