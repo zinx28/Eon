@@ -7,3 +7,8 @@ This was just eon v1 src
 - Dev mode wont support updater unless you add it
 - DO NOT USE HEADLESS (this mode wasnt made proper)
 - Login "Won't" Work as i didn't add the backend
+
+
+# Login Api (Not added)
+- GET launcher/token/:token 
+- Responds back as { Email: "" }
