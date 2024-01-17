@@ -1,0 +1,53 @@
+﻿<ui:UiWindow x:Class="UiDesktopApp5.Window2"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            xmlns:local="clr-namespace:UiDesktopApp5"
+            xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+        mc:Ignorable="d"
+                ExtendsContentIntoTitleBar="True"
+    WindowBackdropType="Mica"
+    WindowCornerPreference="Round"
+    ResizeMode="NoResize"
+        Title="
+             Version Checker" Height="454" Width="336" WindowStyle="None"
+              WindowStartupLocation="CenterScreen" Closing="UiWindow_Closing"
+             >
+    <Grid Margin="0,0,0,-12">
+        <Border Grid.Row="0">
+
+            <Border.Effect>
+                <BlurEffect Radius="2"/>
+            </Border.Effect>
+
+            <Border x:Name="imageContainer">
+
+
+                <Border.Background>
+                    <ImageBrush ImageSource="pack://application:,,,/Assets/LoginBackground.png"  Stretch="UniformToFill" />
+                </Border.Background>
+                <Border>
+                    <Border.Background>
+                        <SolidColorBrush Color="Black" Opacity="0.5"/>
+                    </Border.Background>
+                    
+                </Border>
+            </Border>
+        </Border>
+        <Grid>
+            <Viewbox Width="144" Height="144">
+                <ui:ProgressRing IsIndeterminate="True"  BorderThickness="0.2"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="200,200,200,200" UseLayoutRounding="False"/>
+            </Viewbox>
+            <Label x:Name="Status" Content="Checking for updates..." Margin="0,324,0,45" FontFamily="Arial Nova" FontSize="24" HorizontalAlignment="Center" Width="330" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" />
+        </Grid>
+        <ui:TitleBar
+            Title="Eon"
+            Grid.Row="0"
+            ShowClose="False"
+            ShowMinimize="False"
+            ShowMaximize="False"
+            Icon="pack://application:,,,/Assets/Logo.png"
+            UseSnapLayout="True" FontSize="16" Height="70"/>
+    </Grid>
+</ui:UiWindow>

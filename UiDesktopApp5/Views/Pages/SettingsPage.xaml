@@ -1,0 +1,113 @@
+﻿<ui:UiPage x:Class="UiDesktopApp5.Views.Pages.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:UiDesktopApp5.Views.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    Title="SettingsPage"
+    d:DataContext="{d:DesignInstance local:SettingsPage,
+                                     IsDesignTimeCreatable=False}"
+    Width="1026.4" Height="664"
+    d:Background="{DynamicResource ApplicationBackgroundBrush}"
+    Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+    mc:Ignorable="d">
+    <Grid VerticalAlignment="Center" Height="664">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="99*"/>
+            <RowDefinition Height="565*"/>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <SolidColorBrush Color="#FF232330" Opacity="0"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <Border BorderBrush="#FF2D2C2C" Margin="-10,-33,-1159,464" Grid.ColumnSpan="2" Grid.RowSpan="2">
+
+            <Grid Margin="10,0,0,0">
+                <Border Margin="0,28,260,0" Width="1125" Height="206">
+                    <Border.Background>
+                        <ImageBrush ImageSource="/Assets/LoginBackground.png" Stretch="UniformToFill"/>
+
+                    </Border.Background>
+                    <Border.Effect>
+                        <BlurEffect Radius="10"/>
+                    </Border.Effect>
+                </Border>
+                <Border Margin="0,28,241,0">
+                    <Border.Background>
+                        <SolidColorBrush Color="Black" Opacity="0.5"/>
+                    </Border.Background>
+                    <Grid HorizontalAlignment="Center" Width="1046">
+                        <Label Content="Settings" Margin="-23,32,904,0" VerticalAlignment="Top" Height="46" FontFamily="Arial Black" FontSize="36" Foreground="#FFF9F9F9" Width="165"/>
+
+                    </Grid>
+                </Border>
+
+            </Grid>
+        </Border>
+
+        <Grid Grid.ColumnSpan="2" Margin="0,106,-898,0" Height="459" Width="1114" Grid.Row="1">
+            <Border BorderBrush="Black" CornerRadius="10" Margin="20,26,620,360" Width="474">
+                <Border.Background>
+                    <SolidColorBrush Color="#FFD9D9D9" Opacity="0.11"/>
+                </Border.Background>
+
+                <Grid Width="472">
+                    <Image Source="/Assets/Discorde.png" Margin="11,11,411,11" Height="51" Width="51" />
+                    <Label  Foreground="White" Content="Discord" Margin="72,14,341,39" FontFamily="Arial Nova" FontSize="14"/>
+                    <Label  Content="Join the discord for more news!" Margin="71,37,172,14" FontFamily="Arial Nova" FontSize="14" RenderTransformOrigin="0.5,0.5">
+                        <Label.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="0.247"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Label.RenderTransform>
+                    </Label>
+                    <ui:Button  Foreground="White" Content="Join" Margin="362,0,0,0" Height="30" Width="90" FontWeight="Bold" Click="Button_Click_1"/>
+                </Grid>
+
+            </Border>
+            <Border BorderBrush="Black" CornerRadius="10" Margin="508,26,132,360" Width="474">
+                <Border.Background>
+                    <SolidColorBrush Color="#FFD9D9D9" Opacity="0.11"/>
+                </Border.Background>
+
+                <Grid Width="472">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="159*"/>
+                        <ColumnDefinition Width="313*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="/Assets/imagde.png" Margin="15,16,102,16" />
+                    <Label  Foreground="White" Content="Tebex" Margin="80,8,21,45" FontFamily="Arial Nova" FontSize="14"/>
+                    <Label  Content="Help us pay eons expenses by &#xD;&#xA;donating!" Margin="80,27,174,5" FontFamily="Arial Nova" FontSize="14" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2">
+                        <Label.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="0.078"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Label.RenderTransform>
+                    </Label>
+
+                    <ui:Button  Foreground="White" Content="Donate" Margin="201,0,0,0" Height="30" Width="90" FontWeight="Bold" Click="Button_Click" Grid.Column="1"/>
+                </Grid>
+
+            </Border>
+
+        </Grid>
+        <Label  Foreground="White" Content="Token" Margin="30,227,106,298" FontFamily="Arial Nova" FontSize="30" RenderTransformOrigin="0.488,0.348" Grid.ColumnSpan="2" FontWeight="Bold" Grid.Row="1"/>
+        <Label Content="This is used to log in, please do &#xD;&#xA;not share this with anyone!" Margin="30,267,-86,246" FontFamily="Arial Nova" FontSize="18" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2" Grid.Row="1">
+            <Label.Foreground>
+                <SolidColorBrush Color="White" Opacity="0.5"/>
+            </Label.Foreground>
+        </Label>
+        <ui:PasswordBox x:Name="YEAHPASSWORD" Grid.ColumnSpan="2" Margin="30,335,-125,0" VerticalAlignment="Top" MinHeight="45" VerticalContentAlignment="Center" Grid.Row="1" Height="46" Width="323"></ui:PasswordBox>
+    </Grid>
+</ui:UiPage>

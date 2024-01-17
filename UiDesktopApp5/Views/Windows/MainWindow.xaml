@@ -1,0 +1,178 @@
+﻿<ui:UiWindow
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:UiDesktopApp5.Views.Windows"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:pages="clr-namespace:UiDesktopApp5.Views.Pages"
+    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    xmlns:Wpf="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
+    x:Class="UiDesktopApp5.Views.Windows.MainWindow"
+    Title="{Binding ViewModel.ApplicationTitle, Mode=OneWay}"
+    Width="1098"
+    MaxHeight="725"
+    MaxWidth="1098"
+    Height="725"
+    UseLayoutRounding="True"
+    ResizeMode="NoResize"
+    
+    ExtendsContentIntoTitleBar="True"
+    WindowBackdropType="Mica"
+    WindowCornerPreference="Round"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d" Closing="UiWindow_Closing">
+   
+    <Grid x:Name="SoBadGr">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+
+
+
+       <Grid
+            x:Name="RootMainGrid"
+            Grid.Row="1"
+  
+            Margin="0">
+
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition  Width="Auto" />
+                <ColumnDefinition Width="73*" />
+                <ColumnDefinition Width="440*"/>
+
+            </Grid.ColumnDefinitions>
+
+            <!--  This is the main navigation of the application.  -->
+            <Grid   Grid.Column="0">
+                <ui:NavigationStore
+                x:Name="RootNavigation"
+                Margin="6,0,6,0"
+             
+                Footer="{Binding ViewModel.NavigationFooter, Mode=TwoWay}"
+                Frame="{Binding ElementName=RootFrame, Mode=OneWay}"
+                Items="{Binding ViewModel.NavigationItems, Mode=TwoWay}"  />
+            </Grid>
+
+
+            <!--  We display our pages inside this element.  -->
+            <Border
+                Grid.Column="1"
+                
+                CornerRadius="8,0,0,0" Grid.ColumnSpan="2">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Frame x:Name="RootFrame" Grid.RowSpan="2" Content="gfdgfdgdfgdfgdfgdfgdf" Navigated="RootFrame_Navigated" Margin="0,0,0,-1" />
+
+
+                  
+
+                </Grid>
+            </Border>
+        </Grid>
+        <!-- Visibility="Collapsed"-->
+        <Border x:Name="AddBuildPopup" Visibility="Collapsed" Grid.RowSpan="2">
+
+
+
+            <Grid>
+                <Border MouseDown="AddBuildPopup_MouseDown">
+                    <Border.Background>
+                        <SolidColorBrush Color="Black" Opacity="0.7"/>
+                    </Border.Background>
+
+                </Border>
+                <Border Margin="316,220,282,204" CornerRadius="10" Height="285" Width="500">
+                    <Border.Background>
+                        <SolidColorBrush Color="#FF191B1F" Opacity="0.705"/>
+                    </Border.Background>
+                    <Grid>
+
+                        <Grid>
+
+                            <Label Foreground="White" Content="Add a build" Margin="18,18,286,221" FontFamily="Arial Nova" FontSize="36" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
+                                <Label.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform AngleY="-0.16"/>
+                                        <RotateTransform/>
+                                        <TranslateTransform Y="-0.247"/>
+                                    </TransformGroup>
+                                </Label.RenderTransform>
+                            </Label>
+                            <Label Foreground="#FFFFFF" Content="You may add more builds using this section" Margin="18,62,18,196" FontFamily="Arial Nova" FontSize="17" RenderTransformOrigin="0.5,0.5" Opacity="0.7">
+                                <Label.Background>
+                                    <SolidColorBrush Opacity="0.593"/>
+                                </Label.Background>
+                                <Label.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform AngleY="-0.16"/>
+                                        <RotateTransform/>
+                                        <TranslateTransform Y="-0.247"/>
+                                    </TransformGroup>
+                                </Label.RenderTransform>
+                            </Label>
+                            <Border Margin="25,96,25,187" Width="449.6" Height="2.03">
+                                <Border.Background>
+                                    <SolidColorBrush Color="White" Opacity="0.08"/>
+                                </Border.Background>
+
+                            </Border>
+                            <ui:TextBox x:Name="NameOFBUILD" PlaceholderText="Build name" Height="44"   Margin="25,116,25,0" Padding="10,12,10,15"  FontWeight="SemiBold"  MaxLines="5"  MaxLength="50" BorderThickness="0,0,0,0" SnapsToDevicePixels="True" VerticalContentAlignment="Stretch" UseLayoutRounding="False" ClearButtonEnabled="False" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                            <Border Margin="25,165,25,62">
+                                <Grid Margin="0,-4,0,4">
+                                    <ui:TextBox x:Name="PATHBUILS" PlaceholderText="Choose path"  Height="44"  Padding="10,12,10,15" Margin="0,0,38,0" FontWeight="SemiBold" MaxLength="200" BorderThickness="0,0,0,0" SnapsToDevicePixels="True" VerticalContentAlignment="Stretch" UseLayoutRounding="False" ClearButtonEnabled="False" TextWrapping="Wrap"/>
+                                    <Border x:Name="BorderYE"  Margin="408,0,0,0" CornerRadius="0,5,5,0" Height="44.41" MouseLeftButtonUp="Border_MouseLeftButtonUp" Width="41.6" >
+                                        <Border.Resources>
+                                            <Style TargetType="{x:Type Border}">
+                                                <Setter Property="Background" Value="#FF0877C8" />
+                                                <Style.Triggers>
+
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="Background" Value="#FF0D93DB" />
+                                                    </Trigger>
+
+
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Resources>
+                                        <Label Foreground="White" Content="..." FontSize="24" HorizontalAlignment="Center" FontWeight="Bold" />
+                                    </Border>
+                                </Grid>
+
+                            </Border>
+
+                            <ui:Button x:Name="YEAHBUTTON"  Content="Confirm" Margin="0,223,0,0" VerticalAlignment="Top" Width="450" Height="44" HorizontalAlignment="Center" Click="Button_Click_1">
+                                <ui:Button.Background>
+                                    <SolidColorBrush Color="#FF0094FF" Opacity="0.75"/>
+                                </ui:Button.Background>
+
+                            </ui:Button>
+                            <Viewbox x:Name="Shocked" Visibility="Collapsed" Width="30" Height="30" Margin="0,0,0,-205">
+                                <ui:ProgressRing IsIndeterminate="True" Foreground="#FFCECECE"/>
+                            </Viewbox>
+                        </Grid>
+
+                    </Grid>
+                </Border>
+            </Grid>
+
+
+        </Border>
+
+        <ui:TitleBar
+            Title="{Binding ViewModel.ApplicationTitle, Mode=OneWay}"
+            Grid.Row="0"
+            CanMaximize="False"
+            ShowMaximize="True"
+            MouseRightButtonUp="TitleBar_MouseRightButtonDown"
+            Icon="pack://application:,,,/Assets/Logo.png"
+            UseSnapLayout="False" >
+        </ui:TitleBar>
+    </Grid>
+</ui:UiWindow>
