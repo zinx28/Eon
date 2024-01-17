@@ -1,0 +1,14 @@
+{
+  "name": "launcher-api-main",
+  "version": "1.0.0",
+  "description": "Service that helps the launcher run",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

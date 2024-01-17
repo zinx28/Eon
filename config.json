@@ -1,0 +1,21 @@
+{
+    "port": 2451,
+    "api": "http://135.125.189.178",
+    "updaterversion": "0.0.2",
+    "launcherversion": "0.1.92",
+    "devversion": "0.0.3",
+    "devupdater": "0.0.1",
+    "news": [
+          {
+            "image": "https://static.wikia.nocookie.net/fortnite/images/f/fa/Late_Game_Arena_-_Mode_-_Fortnite.jpg",
+              "title": "Eon Beta",
+              "body": "Eon is in Beta and is beginning to host 12.41 click the download button below to play"
+          },
+          {
+            "image": "https://static.wikia.nocookie.net/fortnite/images/8/85/Chapter_2_Season_3_-_Key_Art_-_Fortnite.jpeg",
+              "title": "Many Modes To Enjoy",
+              "body": "Eon features lots of gameodes such as Arsenal, Storm King and even Lategame"
+          }
+      ]
+  }
+  
